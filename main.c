@@ -1,16 +1,18 @@
 #include <stdio.h>
-#include "operation.h"
+#include "contador.h"
 
 int main() {
-    int tamanho = sizeof(float);
-    float conjuntoDados[tamanho];
-    printf("Digite os elementos do conjunto de dados:\n");
-    for (int i = 0; i < tamanho; ++i) {
+    float conjuntoDados[] = {1.0, 2.0, 3.0, 4.0, 5.0,7.0};
 
-        if (scanf("%f", &conjuntoDados[i]) != 1) {
-            printf("Entrada inválida.\n");
-            return 1;
-        }
+    int tamanhoArray = sizeof(conjuntoDados) / sizeof(conjuntoDados[0]);
+
+    printf("O tamanho do array é: %d\n", tamanhoArray);
+
+    printf("Elementos do array:\n");
+    for (int i = 0; i < tamanhoArray; i++) {
+        printf("%.2f ", conjuntoDados[i]);
     }
-    printf("Resultado: %.2f\n", calcMedia(conjuntoDados));
+    printf("\n");
+
+    return 0;
 }
